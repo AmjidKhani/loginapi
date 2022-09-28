@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -23,6 +25,10 @@ class _homepageState extends State<homepage> {
            }
        );
        if(response.statusCode==200){
+         var data =jsonDecode(response.body);
+         print(data);         //you can get the data and can show your data simplly decode the response
+         print(data["id"]);
+
          print("Successfully Login");
        }
        else{
